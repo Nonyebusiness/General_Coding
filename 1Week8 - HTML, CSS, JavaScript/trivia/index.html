@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+        </script>
+
+
+        <style>
+            .button-container {
+            display: flex;
+            gap: 10px; /* Adjust the space between buttons */
+        }
+        .custom-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .custom-button-wrong{
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .custom-button-correct {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .feedback {
+            color: #ff4444;
+        }
+
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+               
+                <h3>Which country has the .tv domain?</h3>
+                <div class="button-container">
+                    <div class="1">
+                        <button class="custom-button">Turkey</button>
+                        <p style="display: none">Incorrect</p>
+                    </div>
+                    <div class="1">
+                        <button class="custom-button">Tunisia</button>
+                        <p style="display: none">Incorrect</p>
+                    </div>
+                    <div class="1">
+                        <button class="custom-button">Tajikistan</button>
+                        <p style="display: none">Incorrect</p>
+                    </div>
+                    <div class="1">
+                        <button class="custom-button">Tanzania</button>
+                        <p style="display: none">Incorrect</p>
+                    </div>
+                    <div class="0">
+                        <button class="custom-button">Tuvalu</button>
+                        <p style="display: none">Correct</p>
+                    </div>
+                    <div class="1">
+                        <button class="custom-button">Tonga</button>
+                        <p style="display: none">Incorrect</p>
+                    </div>
+                </div>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const buttonContainers = document.querySelectorAll('.button-container div');
+
+                        buttonContainers.forEach(container => {
+                            const button = container.querySelector('button');
+                            const feedback = container.querySelector('p');
+
+                            button.addEventListener('click', function() {
+                                if (container.classList.contains('1')) {
+                                    button.style.backgroundColor = '#ff4444';
+                                    feedback.style.display = 'block';
+                                } else if (container.classList.contains('0')) {
+                                    button.style.backgroundColor = '#00ff00';
+                                    feedback.style.display = 'block';
+                                }
+                            });
+                        });
+                    });
+                </script>
+
+
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>Which country owns Sicily?</h3>
+                <input type="text" id="free-response">
+                <button onclick="checkFreeResponse()">Submit</button>
+                <div class="feedback" id="free-response-feedback">
+
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function checkFreeResponse() {
+                const userInput = document.getElementById('free-response').value;
+                const feedback = document.getElementById('free-response-feedback');
+                const inputBox = document.getElementById('free-response');
+
+
+                if (userInput.toLowerCase() === "italy") {
+                    feedback.innerText = "Correct!";
+                    feedback.style.color = '#00FF00';
+                    inputBox.style.backgroundColor = '#00FF00';
+                } else {
+                    feedback.innerText = "Incorrect";
+                    feedback.style.color = '#FF0000';
+                    inputBox.style.backgroundColor = '#FF0000';
+                }
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.woodridge-logo
+{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 3;
+  margin-left: 0px;
+}
+
+.bluecard
+{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 3;
+  margin-left: 0px;
+  color:rgb(255,255,255);
+}
+
+body
+{
+  background-color: rgb(241, 241, 241);
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.heading-1
+{
+  background-color: rgb(17, 46, 82);
+  color: rgb(255, 255, 255);
+  padding: 20px 0;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+
+}
+
+.stripes-container-right
+{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 80px;
+  background-image: linear-gradient(45deg, black 25%, yellow 25%, yellow 50%, black 50%, black 75%, yellow 75%, transparent);
+  background-size: 80px 80px;
+  background-repeat: repeat-y;
+  z-index: 1;
+
+}
+.stripes-container-left
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  background-image: linear-gradient(135deg, black 25%, yellow 5%, yellow 50%, black 50%, black 75%, yellow  75%, transparent);
+  background-size: 80px 80px;
+  background-repeat: repeat-y;
+  z-index: 1;
+
+}
+
+.main-text
+{
+  text-align:center;
+  z-index: -1;
+    position: relative;
+  padding: 30px 0;
+  margin-left: 90px;
+    margin-right: 90px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    float:center;
+}
+
+.emergency-text
+{
+  text-align:center;
+  z-index: -1;
+    position: relative;
+  padding: 30px 0;
+  margin-left: 90px;
+    margin-right: 90px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    float:center;
+}
+
+.subheading-text
+{
+  text-align:center;
+  background-color:rgb(19, 116, 177);
+  z-index: -1;
+    position: relative;
+  padding: 30px 0;
+  margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color:rgb(255,255,255);
+    float:center;
+
+
+}
+
+.access-denied
+{
+  z-index: 3;
+  text-align: center;
+  position: relative;
+  font-size: 100px;
+  color:rgb(255,0,0)
+
+}
+
+.centerloginbutton
+{
+       position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+
+
+
+
+}
+
+.link-style {
+  color: blue;
+  text-decoration: underline;
+  cursor: not-allowed;
+}
+
+
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Page Title</title>
+</head>
+
+<body>
+
+
+<div class="stripes-container-left"></div>
+
+<div class="stripes-container-right"></div>
+
+<h1 class="heading-1">🦺 WSHS Safety Website 🦺</h1>
+
+<div class="woodridge-logo">
+<img src="https://woodridgeshs.eq.edu.au/SiteCollectionImages/sitelogo.png"
+width="100"
+height="80"
+alt="Woodridge State High School Logo">
+</div>
+
+<div class="bluecard" id="blueCard" style="display: none;">
+  <form id="blueCardForm">
+    <label for="blueCardInput">BlueCard:</label>
+    <input type="text" id="blueCardInput" name="blueCardInput"><br><br>
+    <button type="button" onclick="bluecard()">Submit</button>
+  </form>
+</div>
+
+
+<script>
+function bluecard()
+{
+  var enteredWord = document.getElementById("blueCardInput").value.toLowerCase();
+  var subheadingElement = document.getElementById("subheading");
+
+
+  if (enteredWord === "bluecard")
+  {
+    alert("Blue Card Accepted");
+  }
+  else if (enteredWord == "secretcode")
+  {
+      alert("Siren has been activated")
+      document.querySelector(".heading-1").style.backgroundColor = "rgb(200, 10, 10)";
+document.querySelector(".subheading-text").style.backgroundColor = "rgb(255, 10, 10)";
+
+    document.querySelector(".main-text").style.display = "none";
+    document.querySelector(".emergency-text").style.display = "block";
+    subheadingElement.textContent = "🚨🚨🚨**AN EMERGENCY IS CURRENTLY TAKING PLACE**🚨🚨🚨";
+  }
+  else if (enteredWord == "stop")
+  {
+      alert("Siren has been deactivated")
+    document.querySelector(".heading-1").style.backgroundColor = "rgb(17, 46, 82)";
+    document.querySelector(".subheading-text").style.backgroundColor = "rgb(19, 116, 177)";
+    document.querySelector(".main-text").style.display = "block";
+    document.querySelector(".emergency-text").style.display = "none";
+    subheadingElement.textContent = "Welcome to Woodridge State High School Safety Website!";
+
+
+  }
+  else
+  {
+    alert("Blue Card denied. Please enter the correct word.");
+  }
+}
+</script>
+
+
+
+
+
+<h2 id="subheading" class="subheading-text">Welcome to Woodridge State High School Safety Website!</h2>
+
+
+
+<script>
+function Login1()
+{
+  document.getElementById("demo").style.fontSize = "25px";
+  document.getElementById("demo").style.color = "red";
+  document.getElementById("demo").style.backgroundColor = "yellow";
+}
+</script>
+
+
+<div class="centerloginbutton">
+  <form id="loginForm">
+    <label for="fname">Login:</label>
+    <input type="text" id="loginInput" name="fname"><br><br>
+    <button type="button" onclick="checkLogin()">Submit</button>
+  </form>
+</div>
+
+
+<p class="access-denied">Access Denied</p>
+
+
+
+<script>
+function checkLogin()
+{
+  var enteredWord = document.getElementById("loginInput").value.toLowerCase();
+
+  if (enteredWord === "iamstafftrust" || enteredWord === "iamstudent")
+  {
+      document.querySelector(".access-denied").style.display = "none";
+    document.querySelector(".centerloginbutton").style.display = "none";
+    document.querySelector(".main-text").style.display = "block";
+    document.querySelector(".bluecard").style.display = "block";
+  }
+  else
+  {
+    alert("Access denied. Please enter the correct word.");
+  }
+}
+</script>
+
+
+
+<div class="main-text" id="hiddenContent" style="display: none;">
+<p>
+<b>Welcome to Our Safety Website: Ensuring a Secure Environment for All</b><br><br>
+
+At [Your School/Institution Name], we are committed to providing a safe and secure environment for all students, staff, and visitors. Our top priority is the well-being of everyone within our premises. This page serves as a comprehensive guide to the various safety measures and protocols we have in place. <br><br>
+
+
+<span style="font-size: 26px;"><b>General School Safety Measures</b><br><br></span>
+
+<b>Access Control:</b><br> We maintain a controlled access system, ensuring that only authorized individuals can enter the premises. Visitors are required to sign in at the main office and wear visitor badges for easy identification.<br><br>
+
+<b>Emergency Drills:</b><br> Regular fire drills, lockdown drills, and evacuation drills are conducted to ensure everyone is familiar with the procedures in case of emergencies.<br><br>
+
+<b>Security Personnel:</b><br> Trained security personnel are stationed throughout the campus to monitor activities and respond swiftly to any security concerns.<br><br>
+
+<b>CCTV Surveillance:</b><br> We have a comprehensive network of CCTV cameras placed strategically across the campus to enhance security monitoring.<br><br>
+
+ <span style="font-size: 26px;"><b>Student Safety</b><br><br></span>
+
+<b>Bullying Prevention:</b><br> We have a strict anti-bullying policy in place. Students are educated about the importance of kindness and respect, and a dedicated team is available to address any bullying incidents.<br><br>
+
+<b>Safe Transportation:</b><br> If your child uses our transportation services, rest assured that our buses are equipped with safety features and driven by trained drivers who prioritize student safety.<br><br>
+
+<b>Medical Care:</b><br> Our school nurse's office is well-equipped to provide immediate medical attention in case of minor injuries or illnesses. We also maintain records of any allergies or medical conditions.<br><br>
+
+<span style="font-size: 26px;"><b>Emergency Preparedness:</b><br><br></span>
+
+<b>Communication:</b><br> In case of emergencies, we have a well-established communication system to notify parents, guardians, and staff promptly.<br><br>
+
+<b>Emergency Contacts:</b><br> Please ensure your emergency contact information is up to date to facilitate efficient communication during any unforeseen situations.<br><br>
+
+<b>Collaboration with Authorities:<br><br></b> We work closely with local law enforcement and emergency services to ensure a coordinated response in case of serious incidents.<br><br>
+
+<span style="font-size: 26px;"><b>Safety Education</b><br><br></span>
+
+<b>Safety Curriculum:</b><br> Our students receive age-appropriate safety education, empowering them with knowledge about personal safety, online safety, and general emergency procedures.<br><br>
+
+<b>Parent Involvement:</b><br> We encourage parents and guardians to engage in safety discussions with their children at home, reinforcing the importance of staying safe both in and out of school.<br><br>
+
+Remember, safety is a shared responsibility. By working together – school, students, parents, and the community – we can create an environment that prioritizes security and well-being. If you have any questions or concerns, please don't hesitate to reach out to our safety team.<br>
+</p>
+
+
+<p><span class="link-style">Safety Document 1</span></p>
+<p><span class="link-style">Safety Document 2</span></p>
+<p><span class="link-style">Safety Document 3</span></p>
+
+
+
+<img src="https://www.tmr.qld.gov.au/-/media/Safety/Schoolroadsafety/Safe-school-travel-safest/School-zone-speed-limits/set-a-safe-pace-at-school-streetsmarts.jpg?la=en"
+width="400"
+height="600">
+
+<img src="https://i0.wp.com/www.pulsefm.ca/wp-content/uploads/2018/10/Screen-Shot-2018-10-11-at-9.07.06-AM-1.png?fit=956%2C1200&ssl=1"
+width="400"
+height="600">
+
+
+</div>
+
+<div class="emergency-text" style="display: none;">
+<p>
+<b>**EMERGENCY ALERT:** <br><br>An emergency situation has occurred. Please take the following safety precautions immediately:</b><br><br></p>
+
+<ul>
+ <li> - Stay calm and follow the instructions of staff and authorities.<br> </li>
+<li>  - Proceed to the nearest exit or designated safe area.<br></li>
+<li>  - Do not use elevators.<br></li>
+<li>  - Avoid crowded areas and keep a safe distance from the incident.<br></li>
+<li>  - Tune in to official communication channels for updates and instructions.<br></li>
+
+ </ul>
+
+
+<img src="https://i.pinimg.com/originals/c0/99/77/c09977851799bc43f05f004d585a0ad3.jpg"
+width="700"
+height="393.75">
+<img src="https://i.pinimg.com/750x/9b/6f/e9/9b6fe93b749d53576cbf01293a73d4cb.jpg">
+
+
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1050.7875056027235!2d153.09628741286264!3d-27.642666794616456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b9144053fd1ebc9%3A0x74e013da2902a481!2sWoodridge%20State%20High%20School.!5e0!3m2!1sen!2sau!4v1692407028796!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+</div>
+
+</body>
+</html>
