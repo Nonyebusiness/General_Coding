@@ -1,0 +1,24 @@
+import numpy as np
+
+#ARRAY INDEXING AND CLICING
+
+
+#1D
+
+one_d = np.array([0, 1, 2, 3, 4, 5])
+
+#indexing
+print(one_d[2])
+print(one_d[-1])
+
+#sclicing
+#array[start:stop:step]
+print(one_d[1:4])
+print(one_d[::2])
+
+two_d = np.array([[1, 2, 3,], [4, 5, 6], [7, 8, 9]])
+#2d indexing
+print(two_d[1, 2])
+print(two_d[1])
+
+print(two_d[0:2, 0:2])
