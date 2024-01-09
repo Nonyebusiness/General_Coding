@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: It was the slowest algorithm to sort 50000 random numbers
+
+sort2 uses: Merge Sort
+
+How do you know?: It was significantly the fastest algorithm of all of them
+
+sort3 uses: Selection Sort
+
+How do you know?: process of elimination, it was faster than sort 1 and not as fast as sort 2 so if the first two are correct then this has to be selection sort
